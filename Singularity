@@ -15,7 +15,6 @@ From: nvidia/cuda:10.1-cudnn7-devel-ubuntu18.04
     LD_LIBRARY_PATH=/usr/local/cuda-10.1/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 
 %post
-    apt update
     apt -y install build-essential
     apt -y install curl
     apt -y sudo
