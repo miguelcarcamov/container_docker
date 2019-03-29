@@ -1,5 +1,5 @@
 BootStrap: docker
-From: nvidia/cuda:10.1-cudnn7-runtime-ubuntu18.04
+From: nvidia/cuda:10.1-cudnn7-devel-ubuntu18.04
 
 %labels
   maintainer Miguel Carcamo <miguel.carcamo@postgrad.manchester.ac.uk>
@@ -17,6 +17,13 @@ From: nvidia/cuda:10.1-cudnn7-runtime-ubuntu18.04
 %post
     apt update
     apt -y install build-essential
+    apt -y install curl
+    apt -y sudo
+    apt -y man
+    apt -y vim
+    apt -y autoconf
+    apt -y libtool
+    apt -y automake
     apt -y install libboost-all-dev
     apt -y install apt-utils
     apt -y install software-properties-common
@@ -36,11 +43,6 @@ From: nvidia/cuda:10.1-cudnn7-runtime-ubuntu18.04
     pip3 install pywcs
     pip3 install astropy
     pip3 install pywt
-    apt -y install curl
-    curl -O https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/cuda-repo-ubuntu1804_10.1.105-1_amd64.deb
-    yes | dpkg -i cuda-repo-ubuntu1804_10.1.105-1_amd64.deb
-    apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/7fa2af80.pub
-    apt update
     apt -y install cuda
     apt -y install cmake
     apt -y install gfortran
