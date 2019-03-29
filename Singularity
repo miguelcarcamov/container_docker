@@ -17,10 +17,9 @@ From: nvidia/cuda:10.0-cudnn7-runtime-ubuntu18.04
 %post
     apt update
     apt -y install build-essential
-    apt -y libboost-all-dev
-    apt -y apt-utils
-
-    apt install -y software-properties-common
+    apt -y install libboost-all-dev
+    apt -y install apt-utils
+    apt -y install software-properties-common
     add-apt-repository universe
     apt update
     apt -y install python2.7
