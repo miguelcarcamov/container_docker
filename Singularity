@@ -1,6 +1,5 @@
-BootStrap: debootstrap
-OSVersion: bionic
-MirrorURL: http://uk.archive.ubuntu.com/ubuntu/
+BootStrap: docker
+From: nvidia/cuda:10.0-cudnn7-runtime-ubuntu18.04
 
 %labels
   maintainer Miguel Carcamo <miguel.carcamo@postgrad.manchester.ac.uk>
@@ -10,9 +9,17 @@ MirrorURL: http://uk.archive.ubuntu.com/ubuntu/
   package.source.url
   package.source.mdm5
   package.license GPLv3
+%environment
+    SHELL=/bin/bash
+    PATH=/usr/local/cuda-10.0/bin${PATH:+:${PATH}}
+    LD_LIBRARY_PATH=/usr/local/cuda-10.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+
 %post
     apt update
     apt -y install build-essential
+    apt -y libboost-all-dev
+    apt -y apt-utils
+
     apt install -y software-properties-common
     add-apt-repository universe
     apt update
