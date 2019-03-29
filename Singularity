@@ -1,5 +1,5 @@
 BootStrap: docker
-From: nvidia/cuda:10.0-cudnn7-runtime-ubuntu18.04
+From: nvidia/cuda:10.1-cudnn7-runtime-ubuntu18.04
 
 %labels
   maintainer Miguel Carcamo <miguel.carcamo@postgrad.manchester.ac.uk>
@@ -11,8 +11,8 @@ From: nvidia/cuda:10.0-cudnn7-runtime-ubuntu18.04
   package.license GPLv3
 %environment
     SHELL=/bin/bash
-    PATH=/usr/local/cuda-10.0/bin${PATH:+:${PATH}}
-    LD_LIBRARY_PATH=/usr/local/cuda-10.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+    PATH=/usr/local/cuda-10.1/bin${PATH:+:${PATH}}
+    LD_LIBRARY_PATH=/usr/local/cuda-10.1/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 
 %post
     apt update
@@ -20,6 +20,7 @@ From: nvidia/cuda:10.0-cudnn7-runtime-ubuntu18.04
     apt -y install libboost-all-dev
     apt -y install apt-utils
     apt -y install software-properties-common
+    apt -y install udev
     add-apt-repository universe
     apt update
     apt -y install python2.7
@@ -35,6 +36,7 @@ From: nvidia/cuda:10.0-cudnn7-runtime-ubuntu18.04
     pip3 install pywcs
     pip3 install astropy
     pip3 install pywt
+    apt -y install linux-headers-$(uname -r)
     apt -y install curl
     curl -O https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/cuda-repo-ubuntu1804_10.1.105-1_amd64.deb
     yes | dpkg -i cuda-repo-ubuntu1804_10.1.105-1_amd64.deb
