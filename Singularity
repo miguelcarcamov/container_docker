@@ -37,7 +37,7 @@ From: nvidia/cuda:10.0-cudnn7-runtime-ubuntu18.04
     pip3 install pywt
     apt -y install curl
     curl -O https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/cuda-repo-ubuntu1804_10.1.105-1_amd64.deb
-    dpkg -i cuda-repo-ubuntu1804_10.1.105-1_amd64.deb --force-confnew
+    yes | dpkg -i cuda-repo-ubuntu1804_10.1.105-1_amd64.deb
     apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/7fa2af80.pub
     apt update
     apt -y install cuda
