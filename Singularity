@@ -34,6 +34,7 @@ From: nvidia/cuda:10.0-cudnn7-runtime-ubuntu18.04
     pip3 install pyfits
     pip3 install pywcs
     pip3 install astropy
+    pip3 install pywt
     apt -y install curl
     curl -O https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/cuda-repo-ubuntu1804_10.1.105-1_amd64.deb
     dpkg -i cuda-repo-ubuntu1804_10.1.105-1_amd64.deb
