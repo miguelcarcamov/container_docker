@@ -1,4 +1,4 @@
-BootStrap: docker
+BootStrap: debootstrap
 OSVersion: bionic
 MirrorURL: http://uk.archive.ubuntu.com/ubuntu/
 
