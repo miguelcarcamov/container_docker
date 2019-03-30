@@ -16,7 +16,6 @@ From: nvidia/cuda:10.1-cudnn7-devel-ubuntu18.04
 
 %post
 
-    apt -y install sudo
     apt -y install man
     apt -y install vim
     apt -y install autoconf
