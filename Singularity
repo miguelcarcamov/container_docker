@@ -15,11 +15,13 @@ From: nvidia/cuda:10.1-cudnn7-devel-ubuntu18.04
     LD_LIBRARY_PATH=/usr/local/cuda-10.1/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 
 %post
-    apt -y man
-    apt -y vim
-    apt -y autoconf
-    apt -y libtool
-    apt -y automake
+
+    apt -y install sudo
+    apt -y install man
+    apt -y install vim
+    apt -y install autoconf
+    apt -y install libtool
+    apt -y install automake
     apt -y install libboost-all-dev
     apt -y install apt-utils
     apt -y install software-properties-common
