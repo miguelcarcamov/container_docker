@@ -18,10 +18,10 @@ From: nvidia/cuda:10.1-cudnn7-devel-ubuntu18.04
     LD_LIBRARY_PATH=/usr/local/cuda-10.1/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
     export PATH LD_LIBRARY_PATH CUDA_HOME
 %post
-    sudo add-apt-repository main
-    sudo add-apt-repository universe
-    sudo add-apt-repository restricted
-    sudo add-apt-repository multiverse
+    add-apt-repository main
+    add-apt-repository universe
+    add-apt-repository restricted
+    add-apt-repository multiverse
     apt-get update
     apt-get -y install man
     apt-get -y install vim
