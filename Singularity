@@ -15,8 +15,7 @@ From: nvidia/cuda:10.1-cudnn7-devel-ubuntu18.04
     LD_LIBRARY_PATH=/usr/local/cuda-10.1/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 
 %post
-    apt -y install build-essential
-    apt -y install curl
+
     apt -y sudo
     apt -y man
     apt -y vim
@@ -42,6 +41,7 @@ From: nvidia/cuda:10.1-cudnn7-devel-ubuntu18.04
     pip3 install pywcs
     pip3 install astropy
     pip3 install pywt
+    apt -y install curl
     apt -y install cuda
     apt -y install cmake
     apt -y install gfortran
