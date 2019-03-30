@@ -18,6 +18,7 @@ From: nvidia/cuda:10.1-cudnn7-devel-ubuntu18.04
     LD_LIBRARY_PATH=/usr/local/cuda-10.1/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
     export PATH LD_LIBRARY_PATH CUDA_HOME
 %post
+    apt-get update
     apt-get -y install software-properties-common
     add-apt-repository main
     add-apt-repository universe
