@@ -18,7 +18,11 @@ From: nvidia/cuda:10.1-cudnn7-devel-ubuntu18.04
     LD_LIBRARY_PATH=/usr/local/cuda-10.1/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
     export PATH LD_LIBRARY_PATH CUDA_HOME
 %post
-
+    sudo add-apt-repository main
+    sudo add-apt-repository universe
+    sudo add-apt-repository restricted
+    sudo add-apt-repository multiverse
+    apt-get update
     apt-get -y install man
     apt-get -y install vim
     apt-get -y install autoconf
@@ -28,8 +32,6 @@ From: nvidia/cuda:10.1-cudnn7-devel-ubuntu18.04
     apt-get -y install apt-get-utils
     apt-get -y install software-properties-common
     apt-get -y install udev
-    add-apt-repository universe
-    apt-get update
     apt-get -y install python2.7
     apt-get -y install python-pip
     apt-get -y install python3.6
