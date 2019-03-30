@@ -62,7 +62,7 @@ From: nvidia/cuda:10.1-cudnn7-devel-ubuntu18.04
     apt-get -y install libfftw3-dev
     apt-get -y install python-numpy
     apt-get -y install libboost-python-dev
-    apt-get -y install libpython3.4-dev
+    apt-get -y install libpython3.6-dev
     apt-get -y install libpython2.7-dev
 %runscript
    
