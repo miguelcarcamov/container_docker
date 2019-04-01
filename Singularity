@@ -45,7 +45,7 @@ From: nvidia/cuda:10.1-cudnn7-devel-ubuntu18.04
     pip3 install pyfits
     pip3 install pywcs
     pip3 install astropy
-    pip3 install pywt
+    pip3 install PyWavelets
     pip3 install scipy
     apt-get -y install curl
     apt-get -y install cmake
