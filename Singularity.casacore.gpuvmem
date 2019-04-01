@@ -58,7 +58,6 @@ From: nvidia/cuda:10.1-cudnn7-devel-ubuntu18.04
     apt-get -y install libblas-dev
     apt-get -y install liblapacke-dev
     apt-get -y install libcfitsio-dev
-    apt-get -y install libcfitsio3-dev
     apt-get -y install wcslib-dev
     apt-get -y install libhdf5-serial-dev
     apt-get -y install libfftw3-dev
