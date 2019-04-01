@@ -64,19 +64,6 @@ From: nvidia/cuda:10.1-cudnn7-devel-ubuntu18.04
     apt-get -y install libboost-python-dev
     apt-get -y install libpython3.6-dev
     apt-get -y install libpython2.7-dev
-    git clone --single-branch --branch casa-5.4.0 https://github.com/casacore/casacore.git
-    cd casacore
-    mkdir build
-    cd build
-    cmake -DUSE_FFTW3=ON -DUSE_OPENMP=ON -DUSE_HDF5=ON -DBUILD_PYTHON=ON -DUSE_THREADS=ON ..
-    make -j
-    make install
-    cd ..
-    cd ..
-    git clone https://github.com/miguelcarcamov/gpuvmem.git
-    cd gpuvmem
-    ./configure
-    make NEWCASA=1 -j
-    cd ..
+    apt-get -y install htop
 %runscript
    
