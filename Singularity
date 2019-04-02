@@ -18,6 +18,9 @@ From: nvidia/cuda:10.1-cudnn7-devel-ubuntu18.04
     LD_LIBRARY_PATH=/usr/local/cuda-10.1/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
     export PATH LD_LIBRARY_PATH CUDA_HOME
 %post
+    echo "deb mirror://mirrors.ubuntu.com/mirrors.txt bionic main restricted universe multiverse" > /etc/apt/sources.list
+    echo "deb mirror://mirrors.ubuntu.com/mirrors.txt bionic-updates main restricted universe multiverse" >> /etc/apt/sources.list
+    echo "deb mirror://mirrors.ubuntu.com/mirrors.txt trusty-security main restricted universe multiverse" >> /etc/apt/sources.list 
     apt-get update
     apt-get -y install software-properties-common
     add-apt-repository main
