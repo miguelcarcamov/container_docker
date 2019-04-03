@@ -14,8 +14,8 @@ From: nvidia/cuda:10.1-cudnn7-devel-ubuntu18.04
 
     CUDA_HOME=/usr/local/cuda-10.1
 
-    PATH=/usr/local/cuda-10.1/bin${PATH:+:${PATH}}
-    LD_LIBRARY_PATH=/usr/local/cuda-10.1/lib64:/usr/lib:/usr/local/lib:$LD_LIBRARY_PATH
+    PATH=/usr/local/cuda/bin${PATH:+:${PATH}}
+    LD_LIBRARY_PATH=/usr/local/cuda/lib64:/usr/lib:/usr/local/lib:$LD_LIBRARY_PATH
     export PATH LD_LIBRARY_PATH CUDA_HOME
 %post
     echo "deb mirror://mirrors.ubuntu.com/mirrors.txt bionic main restricted universe multiverse" > /etc/apt/sources.list
