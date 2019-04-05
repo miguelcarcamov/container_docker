@@ -40,6 +40,7 @@ From: nvidia/cuda:10.1-cudnn7-devel-ubuntu18.04
     apt-get -y install python-pip
     apt-get -y install python3.6
     apt-get -y install python3-pip
+    apt-get -y install python3-tk
     apt-get -y install python-tk
     apt-get -y install git
     pip3 install numpy
