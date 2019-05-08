@@ -51,6 +51,8 @@ From: nvidia/cuda:10.1-cudnn7-devel-ubuntu18.04
     pip3 install astropy
     pip3 install PyWavelets
     pip3 install scipy
+    pip3 install toolz
+    pip3 install dask
     apt-get -y install curl
     apt-get -y install cmake
     apt-get -y install gfortran
