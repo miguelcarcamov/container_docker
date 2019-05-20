@@ -11,12 +11,12 @@ From: nvidia/cuda:10.1-cudnn7-devel-ubuntu18.04
   package.license GPLv3
 %environment
     SHELL=/bin/bash
-
+    TMPDIR=/raid/scratch/carcamo/tmp
     CUDA_HOME=/usr/local/cuda-10.1
 
     PATH=/usr/local/cuda/bin${PATH:+:${PATH}}
     LD_LIBRARY_PATH=/usr/local/cuda/lib64:/usr/lib:/usr/local/lib:$LD_LIBRARY_PATH
-    export PATH LD_LIBRARY_PATH CUDA_HOME
+    export PATH LD_LIBRARY_PATH CUDA_HOME TMPDIR
 %post
     echo "deb mirror://mirrors.ubuntu.com/mirrors.txt bionic main restricted universe multiverse" > /etc/apt/sources.list
     echo "deb mirror://mirrors.ubuntu.com/mirrors.txt bionic-updates main restricted universe multiverse" >> /etc/apt/sources.list
@@ -51,6 +51,8 @@ From: nvidia/cuda:10.1-cudnn7-devel-ubuntu18.04
     pip3 install astropy
     pip3 install PyWavelets
     pip3 install scipy
+    pip3 install toolz
+    pip3 install dask
     apt-get -y install curl
     apt-get -y install cmake
     apt-get -y install gfortran
