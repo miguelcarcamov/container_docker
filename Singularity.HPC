@@ -52,6 +52,7 @@ From: nvidia/cuda:10.1-cudnn7-devel-ubuntu18.04
     pip3 install scipy
     pip3 install toolz
     pip3 install dask
+    pip3 install mpi4py
     apt-get -y install curl
     apt-get -y install cmake
     apt-get -y install gfortran
@@ -71,5 +72,8 @@ From: nvidia/cuda:10.1-cudnn7-devel-ubuntu18.04
     apt-get -y install libpython3.6-dev
     apt-get -y install libpython2.7-dev
     apt-get -y install htop
+    apt-get -y install libcr-dev
+    apt-get -y install mpich
+    apt-get -y install mpich-doc
     git clone https://github.com/miguelcarcamov/rm_synthesis_simple.git
 %runscript
