@@ -18,13 +18,13 @@ From: nvidia/cuda:10.0-cudnn7-devel-ubuntu14.04
     echo "deb mirror://mirrors.ubuntu.com/mirrors.txt trusty main restricted universe multiverse" > /etc/apt/sources.list
     echo "deb mirror://mirrors.ubuntu.com/mirrors.txt trusty-updates main restricted universe multiverse" >> /etc/apt/sources.list
     echo "deb mirror://mirrors.ubuntu.com/mirrors.txt trusty-security main restricted universe multiverse" >> /etc/apt/sources.list 
-    add-apt-repository ppa:jonathonf/python-3.6
     apt-get update
     apt-get -y install software-properties-common
     add-apt-repository main
     add-apt-repository universe
     add-apt-repository restricted
     add-apt-repository multiverse
+    add-apt-repository ppa:jonathonf/python-3.6
     apt-get update
     apt-get -y install man
     apt-get -y install vim
