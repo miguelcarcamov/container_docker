@@ -40,12 +40,8 @@ From: nvidia/cuda:10.0-cudnn7-devel-ubuntu14.04
     apt-get -y install python-numpy
     apt-get -y install python-matplotlib
     apt-get -y install python-scipy
+    apt-get -y install python-astropy
     apt-get -y install git
-    pip install cython
-    pip install pyfits
-    pip install pywcs
-    pip install astropy
-    pip install PyWavelets
     apt-get -y install curl
     apt-get -y install cmake
     apt-get -y install gfortran
