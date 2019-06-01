@@ -1,0 +1,70 @@
+BootStrap: docker
+From: nvidia/cuda:10.0-cudnn7-devel-centos6
+
+%labels
+  maintainer Miguel Carcamo <miguel.carcamo@postgrad.manchester.ac.uk>
+  package.name
+  package.version 1.0
+  package.homepage
+  package.source.url
+  package.source.mdm5
+  package.license GPLv3
+%environment
+    SHELL=/bin/bash
+
+    export PATH=/usr/local/cuda/bin${PATH:+:${PATH}}
+    export LD_LIBRARY_PATH=/usr/local/cuda/lib64:/usr/local/lib:/usr/lib:$LD_LIBRARY_PATH
+%post
+    yum -y update
+    yum -y install apt-utils
+    yum -y install man
+    yum -y install vim
+    yum -y install autoconf
+    yum -y install libtool
+    yum -y install automake
+    yum -y install libboost-all-dev
+    yum -y install apt-utils
+    yum -y install udev
+    yum -y install python2.7
+    yum -y install python-pip
+    yum -y install python-tk
+    yum -y install python-numpy
+    yum -y install python-matplotlib
+    yum -y install python-scipy
+    yum -y install python-astropy
+    yum -y install git
+    yum -y install curl
+    yum -y install cmake
+    yum -y install gfortran
+    yum -y install g++
+    yum -y install libncurses5-dev
+    yum -y install libreadline-dev
+    yum -y install flex
+    yum -y install bison
+    yum -y install libblas-dev
+    yum -y install liblapacke-dev
+    yum -y install libcfitsio-dev
+    yum -y install wcslib-dev
+    yum -y install libhdf5-serial-dev
+    yum -y install libfftw3-dev
+    yum -y install python-numpy
+    yum -y install libboost-python-dev
+    yum -y install libpython2.7-dev
+    yum -y install htop
+    git clone --single-branch --branch casa-5.4.0 https://github.com/casacore/casacore.git
+    cd casacore
+    mkdir build
+    cd build
+    cmake -DUSE_FFTW3=ON -DDATA_DIR=/usr/share/casacore/data -DUSE_OPENMP=ON -DUSE_HDF5=ON -DBUILD_PYTHON3=ON -DUSE_THREADS=ON ..
+    make -j2
+    make install
+    cd ..
+    cd ..
+    git clone https://github.com/miguelcarcamov/gpuvmem.git
+    cd gpuvmem
+    export PATH=/usr/local/cuda/bin${PATH:+:${PATH}}
+    export LD_LIBRARY_PATH=/usr/local/cuda/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+    make NEWCASA=1 -j2
+    cd ..
+%runscript
+   
