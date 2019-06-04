@@ -54,7 +54,7 @@ From: nvidia/cuda:10.1-cudnn7-devel-ubuntu18.04
     pip3 install toolz
     pip3 install dask
     pip3 install astropy_helpers
-    pip install https://github.com/keflavich/gaussfitter/archive/master.zip
+    pip3 install https://github.com/keflavich/gaussfitter/archive/master.zip
     apt-get -y install curl
     apt-get -y install cmake
     apt-get -y install gfortran
