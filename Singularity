@@ -74,5 +74,6 @@ From: nvidia/cuda:10.0-cudnn7-devel-ubuntu18.04
     apt-get -y install libpython3.6-dev
     apt-get -y install libpython2.7-dev
     apt-get -y install htop
+    apt-get -y saods9
 %runscript
    

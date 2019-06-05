@@ -60,6 +60,7 @@ From: nvidia/cuda:10.0-cudnn7-devel-ubuntu16.04
     apt-get -y install libboost-python-dev
     apt-get -y install libpython2.7-dev
     apt-get -y install htop
+    apt-get -y install saods9
     touch /usr/bin/nvidia-smi
     git clone --single-branch --branch casa-5.4.0 https://github.com/casacore/casacore.git
     cd casacore

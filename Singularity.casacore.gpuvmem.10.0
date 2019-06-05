@@ -66,6 +66,7 @@ From: nvidia/cuda:10.0-cudnn7-devel-ubuntu18.04
     apt-get -y install libpython3.6-dev
     apt-get -y install libpython2.7-dev
     apt-get -y install htop
+    apt-get -y install saods9
     git clone --single-branch --branch casa-5.4.0 https://github.com/casacore/casacore.git
     cd casacore
     mkdir build
