@@ -11,7 +11,6 @@ From: nvidia/cuda:9.2-cudnn7-devel-ubuntu16.04
   package.license GPLv3
 %environment
     SHELL=/bin/bash
-
     export PATH=/usr/local/cuda/bin${PATH:+:${PATH}}
     export LD_LIBRARY_PATH=/usr/local/cuda/lib64:/usr/local/lib:/usr/lib:$LD_LIBRARY_PATH
 %post
