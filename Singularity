@@ -13,7 +13,6 @@ From: nvidia/cuda:10.0-cudnn7-devel-ubuntu18.04
     SHELL=/bin/bash
     TMPDIR=/raid/scratch/carcamo/tmp
     CUDA_HOME=/usr/local/cuda-10.0
-
     PATH=/usr/local/cuda/bin${PATH:+:${PATH}}
     LD_LIBRARY_PATH=/usr/local/cuda/lib64:/usr/lib:/usr/local/lib:$LD_LIBRARY_PATH
     export PATH LD_LIBRARY_PATH CUDA_HOME TMPDIR
