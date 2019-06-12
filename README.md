@@ -1,2 +1,3 @@
 # container_docker
-CHANGES 2
+
+Useful containers to work with radio astronomical data
