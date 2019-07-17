@@ -4,7 +4,7 @@ From: ubuntu:18.04
 
 %labels
   maintainer Miguel Carcamo <miguel.carcamo@postgrad.manchester.ac.uk>
-  package.name
+  package.name Rotation Measurement Synthesis HPC
   package.version 1.0
   package.homepage
   package.source.url
