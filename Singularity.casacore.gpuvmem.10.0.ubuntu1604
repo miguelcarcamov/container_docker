@@ -61,6 +61,7 @@ From: nvidia/cuda:10.0-cudnn7-devel-ubuntu16.04
     apt-get -y install libpython2.7-dev
     apt-get -y install htop
     apt-get -y install saods9
+    apt-get -y install xorg
     touch /usr/bin/nvidia-smi
     git clone --single-branch --branch casa-5.4.0 https://github.com/casacore/casacore.git
     cd casacore
@@ -85,4 +86,4 @@ From: nvidia/cuda:10.0-cudnn7-devel-ubuntu16.04
     rm -rf casa-release-5.4.0-70.el7
     export PATH=$PATH:/usr/local/bin/CASA/bin
 %runscript
-   
+        
