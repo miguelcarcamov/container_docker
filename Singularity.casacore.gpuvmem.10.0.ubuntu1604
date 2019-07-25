@@ -78,7 +78,7 @@ From: nvidia/cuda:10.0-cudnn7-devel-ubuntu16.04
     export LD_LIBRARY_PATH=/usr/local/cuda/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
     mkdir build
     cd build
-    cmake .. -DNEWCASA=1 -DCMAKE_CUDA_COMPILER=/usr/local/cuda/bin/nvcc
+    cmake .. -DNEWCASA=1 -DCMAKE_CUDA_COMPILER=/usr/local/cuda/bin/nvcc -DCMAKE_CUDA_COMPILER_ENV_VAR=/usr/local/cuda/bin/nvcc
     make -j2
     cd ..
     cd ..
