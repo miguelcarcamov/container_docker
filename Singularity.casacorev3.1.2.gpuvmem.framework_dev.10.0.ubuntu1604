@@ -62,7 +62,7 @@ From: nvidia/cuda:10.0-cudnn7-devel-ubuntu16.04
     apt-get -y install saods9
     apt-get -y install xorg
     touch /usr/bin/nvidia-smi
-    wget https://cmake.org/files/v3.10/cmake-3.10.2-Linux-x86_64.sh
+    curl --header 'Host: cmake.org' --user-agent 'Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0' --header 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' --header 'Accept-Language: en-US,en;q=0.5' --referer 'https://cmake.org/files/v3.10/cmake-3.10.2-Linux-x86_64.sh' --header 'DNT: 1' --header 'Upgrade-Insecure-Requests: 1' 'https://cmake.org/files/v3.10/cmake-3.10.2-Linux-x86_64.sh' --output 'cmake-3.10.2-Linux-x86_64.sh'
     bash cmake-3.10.2-Linux-x86_64.sh
     git clone --single-branch --branch v3.1.2 https://github.com/casacore/casacore.git
     cd casacore
