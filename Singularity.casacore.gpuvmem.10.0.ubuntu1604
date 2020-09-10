@@ -63,7 +63,6 @@ From: nvidia/cuda:10.0-cudnn7-devel-ubuntu16.04
     apt-get -y install xorg
     apt-get -y install cuda-samples-10-0
     apt-get -y install liblua5.3-dev
-    apt-get -y install libxml2-dev
     apt-get -y libgtkmm-3.0-dev
     apt-get -y libpng-dev
     touch /usr/bin/nvidia-smi
