@@ -19,6 +19,8 @@ From: nvidia/cuda:10.0-cudnn7-devel-ubuntu18.04
     echo "deb mirror://mirrors.ubuntu.com/mirrors.txt bionic-updates main restricted universe multiverse" >> /etc/apt/sources.list
     echo "deb mirror://mirrors.ubuntu.com/mirrors.txt bionic-security main restricted universe multiverse" >> /etc/apt/sources.list 
     apt-get update
+    DEBIAN_FRONTEND=noninteractive apt-get install -y keyboard-configuration
+    DEBIAN_FRONTEND=noninteractive apt-get install -y tzdata
     apt-get -y install software-properties-common
     add-apt-repository main
     add-apt-repository universe

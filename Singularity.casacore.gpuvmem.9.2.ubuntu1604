@@ -19,11 +19,14 @@ From: nvidia/cuda:9.2-cudnn7-devel-ubuntu16.04
     echo "deb mirror://mirrors.ubuntu.com/mirrors.txt xenial-updates main restricted universe multiverse" >> /etc/apt/sources.list
     echo "deb mirror://mirrors.ubuntu.com/mirrors.txt xenial-security main restricted universe multiverse" >> /etc/apt/sources.list 
     apt-get update
+    DEBIAN_FRONTEND=noninteractive apt-get install -y keyboard-configuration
+    DEBIAN_FRONTEND=noninteractive apt-get install -y tzdata
     apt-get -y install software-properties-common
     add-apt-repository main
     add-apt-repository universe
     add-apt-repository restricted
     add-apt-repository multiverse
+    add-apt-repository ppa:deadsnakes/ppa
     apt-get update
     apt-get -y install apt-utils
     apt-get -y install man
@@ -31,16 +34,23 @@ From: nvidia/cuda:9.2-cudnn7-devel-ubuntu16.04
     apt-get -y install autoconf
     apt-get -y install libtool
     apt-get -y install automake
-    apt-get -y install libboost-all-dev
     apt-get -y install apt-utils
     apt-get -y install udev
-    apt-get -y install python2.7
+    apt-get -y install python
+    apt-get -y install python-dev
     apt-get -y install python-pip
     apt-get -y install python-tk
     apt-get -y install python-numpy
     apt-get -y install python-matplotlib
     apt-get -y install python-scipy
     apt-get -y install python-astropy
+    apt-get -y install python3-dev
+    apt-get -y install python3-numpy
+    apt-get -y install libboost-all-dev
+    apt-get -y install libboost-filesystem-dev
+    apt-get -y install libboost-system-dev
+    apt-get -y install libboost-date-time-dev
+    apt-get -y install libboost-test-dev
     apt-get -y install git
     apt-get -y install curl
     apt-get -y install gfortran
@@ -57,7 +67,8 @@ From: nvidia/cuda:9.2-cudnn7-devel-ubuntu16.04
     apt-get -y install libfftw3-dev
     apt-get -y install python-numpy
     apt-get -y install libboost-python-dev
-    apt-get -y install libpython2.7-dev
+    apt-get -y install libpython-dev
+    apt-get -y install libpython3-dev
     apt-get -y install htop
     apt-get -y install saods9
     apt-get -y install xorg
@@ -65,29 +76,32 @@ From: nvidia/cuda:9.2-cudnn7-devel-ubuntu16.04
     apt-get -y install liblua5.3-dev
     apt-get -y install libgtkmm-3.0-dev
     apt-get -y install libpng-dev
+    apt-get -y install libxml2-dev
+    apt-get -y install doxygen
+    apt-get -y install graphviz
+    apt-get -y install pkg-config
+    apt-get -y install libgsl-dev
     touch /usr/bin/nvidia-smi
-    curl --header 'Host: cmake.org' --user-agent 'Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0' --header 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' --header 'Accept-Language: en-US,en;q=0.5' --referer 'https://cmake.org/files/v3.10/cmake-3.10.2-Linux-x86_64.sh' --header 'DNT: 1' --header 'Upgrade-Insecure-Requests: 1' 'https://cmake.org/files/v3.10/cmake-3.10.2-Linux-x86_64.sh' --output 'cmake-3.10.2-Linux-x86_64.sh'
-    bash cmake-3.10.2-Linux-x86_64.sh --skip-license
+    curl --header 'Host: cmake.org' --user-agent 'Mozilla/5.0 (Windows NT 10.0; rv:78.0) Gecko/20100101 Firefox/78.0' --header 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' --header 'Accept-Language: en-US,en;q=0.5' --referer 'https://cmake.org/files/v3.12/' --header 'DNT: 1' --header 'Upgrade-Insecure-Requests: 1' 'https://cmake.org/files/v3.12/cmake-3.12.0-Linux-x86_64.sh' --output 'cmake-3.12.0-Linux-x86_64.sh'
+    bash cmake-3.12.0-Linux-x86_64.sh --skip-license
     git clone --single-branch --branch v3.2.1 https://github.com/casacore/casacore.git
     cd casacore
     mkdir build
     cd build
-    cmake -DUSE_FFTW3=ON -DDATA_DIR=/usr/share/casacore/data -DUSE_OPENMP=ON -DUSE_HDF5=ON -DUSE_THREADS=ON ..
+    cmake -DCXX11="ON" -DUSE_FFTW3=ON -DDATA_DIR=/usr/share/casacore/data -DUSE_OPENMP=ON -DUSE_HDF5=ON -DUSE_THREADS=ON ..
     make -j2
     make install
     cd ..
     cd ..
-    curl --header 'Host: kumisystems.dl.sourceforge.net' --user-agent 'Mozilla/5.0 (Windows NT 10.0; rv:78.0) Gecko/20100101 Firefox/78.0' --header 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' --header 'Accept-Language: en-US,en;q=0.5' --referer 'https://sourceforge.net/projects/aoflagger/files/latest/download' --header 'DNT: 1' --cookie 'euconsent-v2=CO5fZpuO5fZpuAfUnBENA2CsAP_AAH_AACiQF5wCQAGgAZABAADQAJgAggBIACjAXmBecAkABoAGQAQAA0ACYAIIASAAowF5gAA; __cmpcvc=___U__; __cmpcpc=____' --header 'Upgrade-Insecure-Requests: 1' 'https://kumisystems.dl.sourceforge.net/project/aoflagger/aoflagger-2.15.0/aoflagger-2.15.0.tar.bz2' --output 'aoflagger-2.15.0.tar.bz2'
-    tar xvfj aoflagger-2.15.0.tar.bz2
-    cd aoflagger-2.15.0
+    git clone --single-branch --branch v2.14.0 https://gitlab.com/miguelcarcamov/aoflagger.git
+    cd aoflagger
     mkdir build
     cd build
-    cmake ..
+    cmake .. -DPORTABLE=True
     make -j2
     make install
     cd ..
     cd ..
-    rm -rf aoflagger-2.15.0.tar.bz2
     git clone https://github.com/miguelcarcamov/gpuvmem.git
     export PATH=/usr/local/cuda/bin${PATH:+:${PATH}}
     export LD_LIBRARY_PATH=/usr/local/cuda/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
