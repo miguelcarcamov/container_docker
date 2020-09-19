@@ -97,7 +97,9 @@ From: nvidia/cuda:10.0-cudnn7-devel-ubuntu18.04
     cd casa-release-5.6.0-60.el7/data/
     rsync -avz rsync://casa-rsync.nrao.edu/casa-data .
     cd ..
-    mv casa-release-5.6.0-60.el7/* /usr/local/bin/CASA/
+    mv * /usr/local/bin/CASA/
+    cd ..
+    rm -rf casa-release-5.6.0-60.el7.tar.gz
     export PATH=$PATH:/usr/local/bin/CASA/bin
 %runscript
    
