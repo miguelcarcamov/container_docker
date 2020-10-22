@@ -39,6 +39,7 @@ From: nvidia/cuda:9.2-cudnn7-devel-ubuntu18.04
     apt-get -y install python3-pip
     apt-get -y install python-tk
     apt-get -y install git
+    apt-get -y install libgfortran3
     pip3 install numpy
     pip3 install matplotlib
     pip3 install cython
@@ -47,6 +48,8 @@ From: nvidia/cuda:9.2-cudnn7-devel-ubuntu18.04
     pip3 install astropy
     pip3 install PyWavelets
     pip3 install scipy
+    pip3 install --index-url https://casa-pip.nrao.edu/repository/pypi-casa-release/simple casatools
+    pip3 install --index-url https://casa-pip.nrao.edu/repository/pypi-casa-release/simple casatasks
     apt-get -y install curl
     apt-get -y install cmake
     apt-get -y install gfortran
