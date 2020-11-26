@@ -54,6 +54,9 @@ From: nvidia/cuda:11.0-cudnn8-devel-ubuntu18.04
     pip3 install scipy
     pip3 install --index-url https://casa-pip.nrao.edu/repository/pypi-casa-release/simple casatools
     pip3 install --index-url https://casa-pip.nrao.edu/repository/pypi-casa-release/simple casatasks
+    pip3 install joblib
+    pip3 install dask
+    pip3 install mpi4py
     apt-get -y install curl
     apt-get -y install cmake
     apt-get -y install gfortran
