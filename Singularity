@@ -42,6 +42,7 @@ From: nvidia/cuda:10.0-cudnn7-devel-ubuntu18.04
     apt-get -y install python3-tk
     apt-get -y install python-tk
     apt-get -y install git
+    apt-get -y install ffmpeg
     pip3 install numpy
     pip3 install matplotlib
     pip3 install cython
