@@ -84,8 +84,8 @@ From: nvidia/cuda:9.2-cudnn7-devel-ubuntu16.04
     apt-get -y install rsync
     apt-get -y install ffmpeg
     touch /usr/bin/nvidia-smi
-    curl --header 'Host: cmake.org' --user-agent 'Mozilla/5.0 (Windows NT 10.0; rv:78.0) Gecko/20100101 Firefox/78.0' --header 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' --header 'Accept-Language: en-US,en;q=0.5' --referer 'https://cmake.org/files/v3.12/' --header 'DNT: 1' --header 'Upgrade-Insecure-Requests: 1' 'https://cmake.org/files/v3.12/cmake-3.12.0-Linux-x86_64.sh' --output 'cmake-3.12.0-Linux-x86_64.sh'
-    bash cmake-3.18.0-Linux-x86_64.sh --skip-license
+    curl --header 'Host: github-releases.githubusercontent.com' --user-agent 'Mozilla/5.0 (Windows NT 10.0; rv:78.0) Gecko/20100101 Firefox/78.0' --header 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' --header 'Accept-Language: en-US,en;q=0.5' --referer 'https://cmake.org/download/' --header 'DNT: 1' --header 'Upgrade-Insecure-Requests: 1' --header 'Sec-GPC: 1' 'https://github-releases.githubusercontent.com/537699/46285380-6c55-11eb-9dfe-f44d27542d42?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20210311%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20210311T023912Z&X-Amz-Expires=300&X-Amz-Signature=aaedfa11a16d2b6cde0871d12d4c922d3c8fdd6eb735036c602f6a2485ac816b&X-Amz-SignedHeaders=host&actor_id=5432126&key_id=0&repo_id=537699&response-content-disposition=attachment%3B%20filename%3Dcmake-3.18.6-Linux-x86_64.sh&response-content-type=application%2Foctet-stream' --output 'cmake-3.18.6-Linux-x86_64.sh'
+    bash cmake-3.18.6-Linux-x86_64.sh --skip-license
     git clone --single-branch --branch v3.2.1 https://github.com/casacore/casacore.git
     cd casacore
     mkdir build
